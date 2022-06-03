@@ -1,7 +1,7 @@
 package routes
 
 import(
-	"github.com/brerafra/golang-apicrud/controllers"
+	"golang-apicrud/controllers"
 	"github.com/gorilla/mux"
 )
 

@@ -1,11 +1,13 @@
 package main
 
 import(
-	"fmt"
 	"log"
 	"net/http"
-	"github.com/brerafra/golang-apicrud/routes"
-	"github.com/brerafra/golang-apicrud/utils"
+	//"github.com/chejo343/go_contacts/routes"
+	//"github.com/chejo343/go_contacts/utils"
+	"golang-apicrud/routes"
+	"golang-apicrud/utils"
+	//"github.com/brerafra/golang-apicrud/utils"
 	"github.com/gorilla/mux"
 )
 

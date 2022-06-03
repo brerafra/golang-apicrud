@@ -2,7 +2,7 @@ package utils
 
 import(
 	"fmt"
-	"github.com/brerafra/golang-apicrud/models"
+	"golang-apicrud/models"
 )
 
 //MigrateDB migra la base de datos
@@ -15,5 +15,5 @@ func MigrateDB(){
 	//Automigrate se encarga de mgirar la base de datos si no se ha migrado,
 	//y lo hace apartir del modelo
 
-	db.AutoMigrate(&&models.Contact{})
+	db.AutoMigrate(&models.Contact{})
 }

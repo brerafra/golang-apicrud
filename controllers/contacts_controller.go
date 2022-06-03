@@ -4,8 +4,8 @@ import(
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"github.com/brerafra/golang-apicrud/models"
-	"github.com/brerafra/golang-apicrud/utils"
+	"golang-apicrud/models"
+	"golang-apicrud/utils"
 	"github.com/gorilla/mux"
 )
 
@@ -16,7 +16,7 @@ func GetContact(w http.ResponseWriter, r *http.Request){
 	//Se obtiene  el parametro id de la url
 	id := mux.Vars(r)["id"]
 	//Conexion a la BD
-	bd := utils.GetConnection()
+	db := utils.GetConnection()
 	defer db.Close()
 	//Consulta a la db - SELECT * FROM contacts Where id=?
 	db.Find(&contact, id)
@@ -58,6 +58,8 @@ func StoreContact (w http.ResponseWriter, r *http.Request){
 	defer db.Close()
 
 	//Se decodifican los datos del body a la estructura contact
+	fmt.Println("pase por aqui")
+	fmt.Println(r.Body)
 
 	err := json.NewDecoder(r.Body).Decode(&contact)
 	if err!=nil{
